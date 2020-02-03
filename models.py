@@ -31,15 +31,16 @@ Have title and release year
 
 
 class Person(db.Model):
-    __tablename__ = 'People'
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
     catchphrase = Column(String)
+    show = Column(String)
 
-    def __init__(self, name, catchphrase=""):
+    def __init__(self, name, show, catchphrase=""):
         self.name = name
         self.catchphrase = catchphrase
+        self.show = show
 
     def format(self):
         return {
